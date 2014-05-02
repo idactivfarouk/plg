@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+           id="org.apache.cordova.plugin"
+      version="0.1.0">
+    <name>Echo</name>
+    <description>Sample PhoneGap Echo Plugin</description>
+    <license>MIT</license>
+    <keywords>phonegap,Echo</keywords>
+ 
+ 
+    <js-module src="www/echo.js" name="Calendar">
+        <clobbers target="window.echo" />
+    </js-module>
+ 
+    <!-- android -->
+    <platform name="android">
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Echo">
+                <param name="android-package" value="org.apache.cordova.plugin.Echo"/>
+            </feature>
+        </config-file>
+ 
+        <source-file src="src/android/Echo.java" target-dir="src/org/apache/cordova/plugin/Echo.java" />     
+     </platform>         
+</plugin>
